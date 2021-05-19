@@ -11,6 +11,8 @@ namespace WhiteBoard
             Console.WriteLine(reverse);
             string cap = practice.Capitalize("welcome home");
             Console.WriteLine(cap);
+            string compressed = practice.Compress("aaabbccccdd");
+            Console.WriteLine(compressed);
 
             Console.ReadLine();
         }

@@ -40,7 +40,39 @@ namespace WhiteBoard
             return new string(asArray);
         }
         //Compress string of characters
-
+        public string Compress(string toCompress)
+        {
+            char[] asArray = toCompress.ToCharArray();
+            int charCounter = 0;
+            List<string> compressed = new List<string>();
+            for (int i = 0; i < asArray.Length; i++)
+            {
+                
+                if(i < asArray.Length - 1)
+                {
+                    if (asArray[i] != asArray[i + 1] || i == asArray.Length - 1)
+                    {
+                        charCounter++;
+                        string count = charCounter.ToString();
+                        compressed.Add(count);
+                        string letter = asArray[i].ToString();
+                        compressed.Add(letter);
+                        charCounter = 0;
+                    }
+                    else if (asArray[i] == asArray[i + 1])
+                    {
+                        charCounter++;
+                    }
+                }
+                
+            }
+            var finalString = new StringBuilder();
+            foreach(var x in compressed)
+            {
+                finalString.Append(x);
+            }
+            return (finalString.ToString());
+        }
         //Palindrome
 
         //Happy Numbers
