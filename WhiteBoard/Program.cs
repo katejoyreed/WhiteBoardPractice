@@ -6,7 +6,12 @@ namespace WhiteBoard
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PracticeProblems practice = new PracticeProblems();
+            string reverse = practice.ReverseString("hello");
+            Console.WriteLine(reverse);
+
+
+            Console.ReadLine();
         }
     }
 }
