@@ -13,6 +13,10 @@ namespace WhiteBoard
             Console.WriteLine(cap);
             string compressed = practice.Compress("aaabbccccdd");
             Console.WriteLine(compressed);
+            string palindromeOne = practice.PalindromeChecker("racecar");
+            Console.WriteLine(palindromeOne);
+            string palindromeTwo = practice.PalindromeChecker("alpha");
+            Console.WriteLine(palindromeTwo);
 
             Console.ReadLine();
         }

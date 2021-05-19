@@ -74,7 +74,24 @@ namespace WhiteBoard
             return (finalString.ToString());
         }
         //Palindrome
-
+        public string PalindromeChecker(string palindrome)
+        {
+            string lower = palindrome.ToLower();
+            char[] array = lower.ToCharArray();
+            Array.Reverse(array);
+            string reversed = new string(array);
+            if(reversed == lower)
+            {
+                string yes = "Yes, " + lower + " is a palindrome";
+                return (yes);
+            }
+            else 
+            {
+                string no = "No, " + lower + " is not a palindrome";
+                return (no);
+            }
+            
+        }
         //Happy Numbers
 
         //Prime Numbers
