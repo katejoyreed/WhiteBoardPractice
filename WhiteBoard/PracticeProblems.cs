@@ -93,9 +93,56 @@ namespace WhiteBoard
             
         }
         //Happy Numbers
+        public bool HappyNumber(string numToCheck)
+        {
+            int num = Int32.Parse(numToCheck);
+            int rem = 0, sum = 0;
+            
+            while (sum != 1 && sum != 10 && sum != 4)
+            {
+                if (num > 0)
+                {
+                    rem = num % 10;
+                    sum = sum + (rem * rem);
+                    num = num / 10;
+                }
+            }
+            if (sum == 1 || sum == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        //Spin Words with five or more letters
+        public string SpinWords(string spin)
+        {
+            string[] words = spin.Split(' ');
+            List<string> sentence = new List<string>();
+            foreach(var word in words)
+            {
+                char[] letters = word.ToCharArray();
 
-        //Prime Numbers
-
-        //Fibonacci
+                if(letters.Length < 5)
+                {
+                    sentence.Add(new string(letters));
+                }
+                else 
+                {
+                    Array.Reverse(letters);
+                    sentence.Add(new string(letters));
+                }
+            }
+            var finalSentence = new StringBuilder();
+            foreach(var word in sentence)
+            {
+                finalSentence.Append(word + " ");
+            }
+            return finalSentence.ToString();
+        }
+        
     }
 }
